@@ -6,14 +6,20 @@
   "type": "module",
   "scripts": {
     "start": "node ./server.js",
-    "dev": "nodemon ./server.js"
+    "dev": "nodemon ./server.js",
+    "dataUsers": "node ./models/data/users.js",
+    "dataAutos": "node ./models/data/autos.js",
+    "dataEmpleados": "node ./models/data/empleados.js",
+    "dataProyectos": "node ./models/data/proyectos.js",
+    "dataCursos": "node ./models/data/cursos.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "mongoose": "^8.7.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
