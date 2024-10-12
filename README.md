@@ -1,52 +1,36 @@
 # backend-JuanForero
 
-Configuración y ejecución de un servidor Express
+Configuración de un proyecto de backend con Node.js, Express y MongoDB
 
-1. Inicializa tu proyecto:
-   npm init -y
+1. Instalar dependencias:
+   - Express: Framework web para Node.js
+     npm install express
 
-2. Instala las dependencias necesarias:
-   npm install express
-   npm install nodemon --save-dev
+   - Nodemon: Herramienta para reiniciar automáticamente el servidor durante desarrollo
+     npm install --save-dev nodemon
 
-3. Modifica el package.json:
-   - Añade "type": "module"
-   - Añade scripts:
-     "scripts": {
-       "start": "node index.js",
-       "dev": "nodemon index.js"
-     }
+   - Dotenv: Para cargar variables de entorno desde un archivo
+     npm install dotenv
 
-4. Crea un archivo index.js con el siguiente contenido:
-   import express from 'express';
+   - Mongoose: Librería para trabajar con MongoDB en Node.js
+     npm install mongoose
 
-   const server = express()
+2. Crear archivo de configuración:
+   Crea un archivo llamado .env en la raíz del proyecto
 
-   const PORT = 8080
+3. Configurar variables de entorno en .env:
+   PORT = 8080
+   password = tu_contraseña_de_base_de_datos
 
-   const ready = () => console.log("server ready in port :" + PORT)
+Explicación:
+- Express te ayudará a crear y manejar tu servidor web.
+- Nodemon facilitará el desarrollo al reiniciar el servidor automáticamente.
+- Dotenv permitirá manejar configuraciones de forma segura.
+- Mongoose simplificará la interacción con tu base de datos MongoDB.
+- El archivo .env guardará información sensible y configuraciones.
 
-   server.listen(PORT, ready)
-
-5. Levanta el servidor:
-   - Para desarrollo (con nodemon):
-     npm run dev
-   - Para producción:
-     npm start
-
-6. Verifica que el servidor esté funcionando:
-   - Abre un navegador y visita http://localhost:8080
-   - Deberías ver un mensaje de error por defecto de Express
-
-7. Añade una ruta básica en index.js:
-   server.get('/', (req, res) => {
-     res.send('¡Hola, mundo!');
-   });
-
-8. Reinicia el servidor si es necesario.
-
-9. Verifica la nueva ruta:
-   - Visita http://localhost:8080 de nuevo
-   - Deberías ver el mensaje "¡Hola, mundo!"
-
-Felicidades, tu servidor Express está funcionando correctamente.
+Recuerda:
+- Ejecuta estos comandos en la terminal, en la carpeta de tu proyecto.
+- No compartas tu archivo .env, especialmente si contiene contraseñas.
+- El puerto 8080 es donde tu servidor web escuchará las peticiones.
+- Reemplaza "tu_contraseña_de_base_de_datos" con tu contraseña real de MongoDB.
