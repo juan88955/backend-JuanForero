@@ -11,7 +11,8 @@ let schema = new Schema({
     isCompleted: {type: Boolean, required: true},
     priority: {type: Number, required: true},
     teamSize: {type: Number, required: true},
-    status: {type: String, required: true}
+    status: {type: String, required: true},
+    empleado: { type: Schema.Types.ObjectId, ref: 'empleados', required: true } // Referencia al modelo Empleado
 },{
     timestamps: true // Para que se guarde la fecha de creación y la fecha de actualización
 })

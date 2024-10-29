@@ -2,7 +2,7 @@ import Proyecto from '../../models/Proyecto.js';
 
 let allProyectos = async (req, res) => {
     try {
-        let all = await Proyecto.find()
+        let all = await Proyecto.find().populate('empleado', 'firstName').exec() // Populate el campo client con el modelo Cliente
         return res.status(200).json({
             respnse: all,
         })

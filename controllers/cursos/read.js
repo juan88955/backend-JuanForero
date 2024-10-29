@@ -2,7 +2,7 @@ import Curso from '../../models/Curso.js';
 
 let allCursos = async (req, res) => {
     try {
-        let all = await Curso.find()
+        let all = await Curso.find().populate('user', 'name').exec() // Populate el campo client con el modelo Cliente
         return res.status(200).json({
             response: all,
         })

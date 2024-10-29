@@ -11,7 +11,8 @@ let schema = new Schema({
     enrollmentCount: { type: Number, required: true },
     isOnline: { type: Boolean, required: true },
     startDate: { type: Date, required: true },
-    duration: { type: Number, required: true }
+    duration: { type: Number, required: true },
+    user: { type: Schema.Types.ObjectId, ref: 'users', required: true } // Referencia al modelo User
 }, {
     timestamps: true // Para que se guarde la fecha de creación y la fecha de actualización
 })

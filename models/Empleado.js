@@ -9,7 +9,8 @@ let schema = new Schema({
     address: { type: String, required: true },
     password: { type: String, required: true },
     photo: { type: String, required: true },
-    role: { type: Number, required: true }
+    role: { type: Number, required: true },
+    proyecto: { type: Schema.Types.ObjectId, ref: 'proyectos', required: true } // Referencia al modelo Proyecto
 }, {
     timestamps: true // Para que se guarde la fecha de creación y la fecha de actualización
 })

@@ -1,6 +1,6 @@
 import User from '../../models/User.js';
 
-let create = async (req, res) => {
+let create = async (req, res, next) => {
     try {
         let user = req.body
         let all = await User.create(user)
@@ -8,9 +8,7 @@ let create = async (req, res) => {
             response: all,
         })
     } catch (error) {
-        return res.status(500).json({
-            response: error.message,
-        })
+        next(error)
     }
 
 }

@@ -1,9 +1,9 @@
-import User from '../../models/Empleado.js';
+import Curso from '../../models/Curso.js';
 
 let create = async (req, res, next) => {
     try {
-        let user = req.body
-        let all = await User.create(user)
+        let curso = req.body
+        let all = await Curso.create(curso)
         return res.status(201).json({
             response: all,
         })
