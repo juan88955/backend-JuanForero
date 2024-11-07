@@ -25,8 +25,24 @@ let UserByRole = async (req, res, next) => {
     }
 }
 
+let userById = async (req, res, next) => {
+    try {
+        let userId = req.params.x
+        let user = await User.findOne({ _id: userId })
+        if (!user) {
+            return res.status(404).json({
+                response: "Usuario no encontrado",
+            })
+        }
+        return res.status(200).json({
+            response: user,
+        })
+    } catch (error) {
+        next(error)
+    }
+}
 
 
 
 
-export { allUsers, UserByRole }
+export { allUsers, UserByRole, userById }
