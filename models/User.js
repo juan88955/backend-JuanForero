@@ -7,7 +7,8 @@ let schema = new Schema({
     password: { type: String, required: true },
     photo: { type: String, required: true },
     role: { type: Number, required: true },
-    auto: { type: Schema.Types.ObjectId, ref: 'autos', required: true } // Referencia al modelo Auto
+    auto: { type: Schema.Types.ObjectId, ref: 'autos'}, // Referencia al modelo Auto
+    online: { type: Boolean}
 }, {
     timestamps: true // Para que se guarde la fecha de creación y la fecha de actualización
 })
