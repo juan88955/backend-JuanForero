@@ -9,6 +9,7 @@ export default (req, res, next) => {
         passwordDB
     )
     if (compare) {
+        delete req.body.password
         return next()
     }
     return res.status(400).json({
